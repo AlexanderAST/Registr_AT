@@ -22,7 +22,7 @@ func (r *AuthPostgres) CreateUser(user registration.User) (int, error) {
 	}
 	return id, nil
 }
-func (r *AuthPostgres) GetUser(Email, password, refcode string) (registration.User, error) {
+func (r *AuthPostgres) GetUser(Email, password string) (registration.User, error) {
 	var user registration.User
 	query := fmt.Sprintf("SELECT id FROM %s WHERE Email=$1 AND password_hash=$2", usersTable)
 	err := r.db.Get(&user, query, Email, password)

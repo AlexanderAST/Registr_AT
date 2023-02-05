@@ -5,5 +5,4 @@ type User struct {
 	Email          string `json:"email" binding:"required"`
 	Password       string `json:"password" binding:"required"`
 	EnteredRefCode string `json:"enteredrefcode" binding:"required"`
-	RefCode        string `json:"refcode" binding:"required"`
 }
