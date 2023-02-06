@@ -50,6 +50,11 @@ func (s *AuthService) CreateUser(user registration.User) (int, error) {
 	return s.repo.CreateUser(user)
 }
 
+func (s *AuthService) CreateCounter() (int, error) {
+	var count, _ = s.repo.CreateCounter()
+	return count, nil
+}
+
 func generatePasswordHash(password string) string {
 	hash := sha1.New()
 	hash.Write([]byte(password))

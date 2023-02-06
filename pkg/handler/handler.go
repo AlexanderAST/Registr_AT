@@ -22,5 +22,13 @@ func (h *Handler) InitRoutes() *gin.Engine {
 		auth.POST("/sign-up", h.signUp)
 		auth.GET("/sign-in", h.signIn)
 	}
+	lists := router.Group("/lists", h.userIdentity)
+	{
+
+		lists.POST("/login", h.createLogin)
+		lists.GET("/count", h.createCount)
+
+	}
+
 	return router
 }

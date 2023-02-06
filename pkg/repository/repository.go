@@ -7,6 +7,7 @@ import (
 
 type Authorization interface {
 	CreateUser(user registration.User) (int, error)
+	CreateCounter() (int, error)
 	GetUser(userEmail, password string) (registration.User, error)
 }
 

@@ -8,6 +8,7 @@ import (
 type Authorization interface {
 	CreateUser(user registration.User) (int, error)
 	GenerateToken(Email, password string) (string, error)
+	CreateCounter() (int, error)
 	ParseToken(token string) (int, error)
 }
 
